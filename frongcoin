@@ -1,0 +1,8 @@
+git init
+git remote add origin https://github.com/FrongCoin/frongcoin.git
+unzip frong_website_static.zip -d frongcoin
+cd frongcoin
+git add .
+git commit -m "Initial commit - FRONG static site"
+git branch -M main
+git push -u origin main
