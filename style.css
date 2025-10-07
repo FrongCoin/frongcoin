@@ -1,52 +1,118 @@
-:root{
-  --bg:#f7f8fa;
-  --accent:#00ff99;
-  --gold:#f5c548;
-  --gun:#1f2933;
-  --muted:#6b7280;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0a, #001100);
+  color: #f0f0f0;
+  text-align: center;
 }
-*{box-sizing:border-box}
-body{font-family:Inter, Poppins, Arial, sans-serif;margin:0;color:var(--gun);background:var(--bg)}
-.site-header{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:18px 36px;background:rgba(255,255,255,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(0,0,0,0.04);z-index:50}
-.brand{display:flex;gap:12px;align-items:center}
-.logo{width:56px;height:56px;border-radius:10px;object-fit:cover;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
-.titles h1{margin:0;font-size:18px;color:var(--gun);letter-spacing:1px}
-.titles .tag{font-size:12px;color:var(--gold)}
 
-.nav a{margin-left:18px;color:var(--gun);text-decoration:none;font-weight:600}
-.whitepaper{padding:8px 12px;background:linear-gradient(90deg,var(--gold),#f2a900);color:#111;border-radius:10px;text-decoration:none;margin-left:12px;font-weight:700}
+header {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-.main{max-width:1100px;margin:120px auto;padding:20px}
-.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px;border-radius:18px}
-.hero-left h2{font-size:44px;margin:0;color:var(--gun);font-weight:700}
-.lead{color:var(--muted);margin-top:12px;max-width:520px}
-.actions{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;background:#111;color:#fff}
-.btn.community{background:linear-gradient(90deg,var(--accent),#00b37e);color:#021}
-.btn.ghost{background:transparent;border:2px solid rgba(0,0,0,0.06);color:var(--gun)}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.btn.buy{background:linear-gradient(90deg,var(--accent),#00b37e);color:#021;box-shadow:0 10px 30px rgba(0,255,150,0.12)}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-.stats{display:flex;gap:12px;margin-top:18px}
-.stats .label{font-size:12px;color:var(--muted)}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+}
 
-.hero-right .card{background:linear-gradient(180deg,#fff,#f3f6f8);padding:18px;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.06);display:flex;flex-direction:column;align-items:center;gap:12px}
-.hero-logo{width:180px;height:180px;object-fit:contain;border-radius:14px;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
-.card-text{font-weight:700;color:var(--gun)}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
 
-.panel{margin-top:36px;padding:28px;background:linear-gradient(180deg,#fff,#fbfdff);border-radius:12px;box-shadow:0 8px 30px rgba(16,24,40,0.03)}
-.panel h3{color:var(--accent);font-family:Orbitron, sans-serif;margin-bottom:10px}
+nav a {
+  color: #9aff6b;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
 
-.tokenomics-box{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:18px}
-.token{background:#fff;border-radius:12px;padding:14px;border:1px solid rgba(0,0,0,0.04);text-align:left}
-.roadmap-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
-.step{background:#fff;border-radius:12px;padding:14px;border:1px solid rgba(0,0,0,0.04)}
+nav a:hover {
+  color: #eaff00;
+}
 
-.community-actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-.site-footer{padding:30px;text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr; padding:20px}
-  .hero-right{order: -1}
-  .site-header{padding:12px 18px}
-  .main{margin:100px 20px}
+.buy-btn {
+  background: #00ff66;
+  color: #000;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
+
+.hero {
+  padding: 80px 20px;
+}
+
+.hero-logo {
+  width: 180px;
+  margin-bottom: 20px;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #00ff66); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 15px #00ff66); }
+}
+
+.buttons a {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary {
+  background: #00ff66;
+  color: #000;
+}
+
+.secondary {
+  border: 2px solid #00ff66;
+  color: #00ff66;
+}
+
+.about, .tokenomics {
+  margin: 60px 20px;
+}
+
+.tokenomics .grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.tokenomics .grid div {
+  background: rgba(0, 255, 100, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px rgba(0,255,100,0.3);
+}
+
+footer {
+  margin-top: 40px;
+  padding: 20px;
+  background: #000;
+  color: #999;
+  font-size: 0.9em;
 }
